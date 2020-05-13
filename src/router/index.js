@@ -28,6 +28,15 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
   },
   {
+    path: '/login2',
+    name: 'Login2',
+    // redirect: Home,
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Login2.vue'),
+  },
+  {
     path: '/music',
     name: 'Music',
     component: () => import(/* webpackChunkName: "about" */ '../views/Music.vue'),

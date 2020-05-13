@@ -95,7 +95,7 @@ export default {
                 message: "登录成功!"
               })
               .then(() => {
-                this.$router.push("/home");
+                this.$router.push("/Music");
               });
           });
       }

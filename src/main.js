@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 // 引入Vant
-import { Button } from 'vant'
+import { Button, Form } from 'vant'
 Vue.use(Button)
 import { Tabbar, TabbarItem } from 'vant'
 Vue.use(Tabbar).use(TabbarItem)
@@ -27,10 +27,10 @@ import { Swipe, SwipeItem } from 'vant'
 Vue.use(Swipe)
 Vue.use(SwipeItem)
 
-// 引入键盘组件
-import { PasswordInput, NumberKeyboard } from 'vant'
-Vue.use(PasswordInput)
-Vue.use(NumberKeyboard)
+// // 引入键盘组件
+// import { PasswordInput, NumberKeyboard } from 'vant'
+// Vue.use(PasswordInput)
+// Vue.use(NumberKeyboard)
 
 // Dialog
 import { Dialog, Cell, Popup, Row, Col } from 'vant'
@@ -39,6 +39,10 @@ Vue.use(Cell)
 Vue.use(Popup)
 Vue.use(Row)
 Vue.use(Col)
+
+//
+import { CellGroup } from 'vant'
+Vue.use(CellGroup)
 
 // 引入网易云api
 // axios

@@ -34,11 +34,11 @@
         <van-button
           text="立即登录"
           block
-          @click="showMask=true"
+          @click="showMask1=true"
         />
         <van-overlay
-          :show="showMask"
-          @click="showMask = false"
+          :show="showMask1"
+          @click="showMask1 = false"
         >
           <div
             class="wrapper"
@@ -46,10 +46,7 @@
           >
 
             <div class="block">
-              <!-- 引入登录表单组件 -->
-              <!-- <LoginCpn /> -->
               <Login />
-
             </div>
           </div>
         </van-overlay>
@@ -57,21 +54,19 @@
         <van-button
           text="立即注册"
           block
-          @click="showMask=true"
+          @click="showMask2=true"
         />
         <van-overlay
-          :show="showMask"
-          @click="showMask = false"
+          :show="showMask2"
+          @click="showMask2 = false"
         >
           <div
             class="wrapper"
             @click.stop
           >
 
-            <div class="block">
-              <!-- 引入登录表单组件 -->
-              <!-- <LoginCpn /> -->
-              <Login />
+            <div class="register-block">
+              <Register />
 
             </div>
           </div>
@@ -112,6 +107,7 @@
 import Carousel from "@/components/Carousel.vue";
 import sidebar from "@/components/Popup/Sidebar.vue";
 import Login from "@/components/Login/Login.vue";
+import Register from "@/components/Login/Register.vue";
 
 export default {
   name: "Navigation",
@@ -119,13 +115,15 @@ export default {
     return {
       active: 1,
       show: false,
-      showMask: false
+      showMask1: false,
+      showMask2: false
     };
   },
   components: {
     Carousel,
     sidebar,
-    Login
+    Login,
+    Register
   },
   created() {},
   mounted() {},
@@ -202,6 +200,11 @@ export default {
   width: 80%;
   height: 320px;
   background-color: #fff;
+}
+.register-block {
+  width: 80%;
+  height: 360px;
+  background: #fff;
 }
 .carousel {
   padding-top: 0;
