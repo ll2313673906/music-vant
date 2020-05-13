@@ -27,6 +27,26 @@ import { Swipe, SwipeItem } from 'vant'
 Vue.use(Swipe)
 Vue.use(SwipeItem)
 
+// 引入键盘组件
+import { PasswordInput, NumberKeyboard } from 'vant'
+Vue.use(PasswordInput)
+Vue.use(NumberKeyboard)
+
+// Dialog
+import { Dialog, Cell, Popup, Row, Col } from 'vant'
+Vue.use(Dialog)
+Vue.use(Cell)
+Vue.use(Popup)
+Vue.use(Row)
+Vue.use(Col)
+
+// 引入网易云api
+// axios
+import axios from 'axios'
+Vue.prototype.axios = axios
+// axios.defaults.baseURL = "xxxxx";  //这里使用自己下载的网易云接口地址
+axios.defaults.baseURL = process.env.NODE_ENV == 'production' ? '/' : 'http://localhost:3000/'
+
 Vue.config.productionTip = false
 
 new Vue({

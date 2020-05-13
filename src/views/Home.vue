@@ -1,39 +1,19 @@
 <template>
   <div class="home">
-    <!-- 遮罩层 -->
-    <van-button
-      text="登录"
-      block
-      @click="show = true"
-    />
-    <van-overlay
-      :show="show"
-      @click="show = false"
-    >
-      <div
-        class="wrapper"
-        @click.stop
-      >
-
-        <div class="block">
-          <!-- 引入登录表单组件 -->
-          <!-- <LoginCpn /> -->
-          <Login />
-
-        </div>
-      </div>
-    </van-overlay>
+    <Navigation />
+    <!-- <Carousel /> -->
 
   </div>
 </template>
 
 <script>
-import Login from "@/components/Login.vue";
+import Navigation from "@/components/Navigation.vue";
+// import Carousel from "@/components/Carousel.vue";
 
 export default {
   name: "Home",
   components: {
-    Login
+    Navigation
   },
   data() {
     return {
@@ -44,25 +24,8 @@ export default {
 </script>
 <style >
 .home {
-  background: rgb(247, 7, 7);
-  height: 500px;
-  padding: 10px;
-}
-/*遮罩层 */
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: rgb(241, 21, 21);
   height: 100%;
-}
-
-.block {
-  width: 80%;
-  height: 320px;
-  background-color: #fff;
-}
-.carousel {
-  padding-top: 0;
-  margin-top: 0px;
+  padding: 10px;
 }
 </style>

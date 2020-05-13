@@ -1,14 +1,13 @@
 <template>
   <div>
 
-    <form
-      action="#"
-      class="login-form"
-    >
+    <div class="login-form">
+      <span>欢迎登录</span>
+
       <!-- 输入任意文本 -->
       <van-field
         left-icon="friends"
-        v-model="text"
+        v-model="phone"
         placeholder="请输入账号"
       />
 
@@ -19,20 +18,24 @@
         type="password"
         placeholder="请输入密码"
       />
+
       <div class="login-btn">
         <van-button
-          type="primary"
+          type="submit"
           color="red"
           size="small"
+          @click="userlogin"
         >登录</van-button>
         <van-button
           type="primary"
           size="small"
           color="red"
           to="home"
+          @click="reset"
         >重置</van-button>
 
       </div>
+      <div><span class="title">其他登录方式</span></div>
       <div class="login-bottom">
         <ul>
           <li>
@@ -55,7 +58,7 @@
           </li>
         </ul>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -63,7 +66,44 @@
 export default {
   name: "Login",
   data() {
-    return { text: "", password: "" };
+    return {
+      phone: "",
+      password: ""
+    };
+  },
+  methods: {
+    userlogin() {
+      if (this.phone == "" || this.password == "") {
+        this.$dialog.alert({
+          message: "账号或者密码不能为空!"
+        });
+      } else {
+        this.axios
+          .get(
+            "/login/cellphone?phone=" +
+              this.phone +
+              "&password=" +
+              this.password
+          )
+          .then(res => {
+            this.$store.state.uid = res.data.account.id;
+            // 存入sessionStorage 防止刷新数据消失
+            let id = JSON.stringify(res.data.account.id);
+            sessionStorage.setItem("uid", id);
+            this.$dialog
+              .alert({
+                message: "登录成功!"
+              })
+              .then(() => {
+                this.$router.push("/home");
+              });
+          });
+      }
+    },
+    reset() {
+      this.phone = "";
+      this.password = "";
+    }
   },
   components: {}
 };
@@ -78,6 +118,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  font-size: 20px;
 }
 .login-btn {
   display: flex;
@@ -89,5 +130,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+.title {
+  font-size: 14px;
+  color: red;
 }
 </style>
