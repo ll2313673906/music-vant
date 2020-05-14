@@ -1,6 +1,5 @@
 <template>
   <div id="login">
-
     <div class="login-form">
       <span>欢迎登录</span>
 

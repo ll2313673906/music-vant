@@ -1,6 +1,6 @@
 <template>
   <div id="user">
-    <!-- 引入头部导航栏 -->
+<!--     引入头部导航栏 -->
     <NavHeader
       :title="message"
       :search="search"
