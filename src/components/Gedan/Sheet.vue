@@ -9,7 +9,7 @@
           <div class="count">
             <van-icon name="service-o" />
             :
-            {{item.playCount | counts}} 万
+            {{item.playCount | counts}}万
           </div>
           <router-link :to="'/sheet/'+item.id">
             <img v-lazy="item.coverImgUrl" />
