@@ -22,9 +22,8 @@ export default {
   }
 };
 </script>
-<style >
+<style scoped>
 .home {
-  background: rgb(241, 21, 21);
   height: 100%;
   padding: 10px;
 }

@@ -11,7 +11,7 @@
       >
 
         <div class="register-block">
-          <Login />
+          <LoginCpn />
 
         </div>
       </div>
@@ -20,15 +20,15 @@
 </template>
 
 <script>
-import Login from "@/components/Login/Login.vue";
+import LoginCpn from "@/components/Login/LoginCpn.vue";
 export default {
-  name: "Login2",
+  name: "Login",
   data() {
     return {
       showMask: true
     };
   },
-  components: { Login },
+  components: { LoginCpn },
   created() {},
   mounted() {},
   methods: {},

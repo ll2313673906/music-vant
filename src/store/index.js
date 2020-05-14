@@ -5,11 +5,10 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    // 登录信息
+    uid: 0,
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+  mutations: {},
+  actions: {},
+  modules: {},
 })

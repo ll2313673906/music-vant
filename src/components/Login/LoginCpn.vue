@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="login">
 
     <div class="login-form">
       <span>欢迎登录</span>
@@ -95,7 +95,7 @@ export default {
                 message: "登录成功!"
               })
               .then(() => {
-                this.$router.push("/Music");
+                this.$router.push("/home");
               });
           });
       }

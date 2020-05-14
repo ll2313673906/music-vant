@@ -41,7 +41,7 @@ export default {
   line-height: 150px;
   text-align: center;
   background-color: #39a9ed;
-  height: 250px;
+  height: 200px;
 }
 .my-swipe .van-swipe-item img {
   width: 100%;

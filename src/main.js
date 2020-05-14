@@ -27,11 +27,6 @@ import { Swipe, SwipeItem } from 'vant'
 Vue.use(Swipe)
 Vue.use(SwipeItem)
 
-// // 引入键盘组件
-// import { PasswordInput, NumberKeyboard } from 'vant'
-// Vue.use(PasswordInput)
-// Vue.use(NumberKeyboard)
-
 // Dialog
 import { Dialog, Cell, Popup, Row, Col } from 'vant'
 Vue.use(Dialog)
@@ -43,6 +38,22 @@ Vue.use(Col)
 //
 import { CellGroup } from 'vant'
 Vue.use(CellGroup)
+
+import { Toast } from 'vant'
+Vue.use(Toast)
+
+// 图片懒加载
+import { Lazyload } from 'vant'
+Vue.use(Lazyload, {
+  lazyComponent: true,
+  error: require('./assets/error.jpg'),
+  loading: require('./assets/loading.gif'),
+})
+
+// 宫格布局
+import { Grid, GridItem } from 'vant'
+Vue.use(Grid)
+Vue.use(GridItem)
 
 // 引入网易云api
 // axios

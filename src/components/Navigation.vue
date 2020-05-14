@@ -10,7 +10,7 @@
           v-model="show"
           round
           position="left"
-          :style="{ width: '70%',height:'100%'}"
+          :style="{ width: '60%',height:'100%'}"
           class="navigation-popup"
         >
           <!-- 引入侧边栏组件 -->
@@ -24,7 +24,7 @@
         </router-link>
       </div>
     </div>
-    <div class="wrap">
+    <div class="wrap2">
 
       <!-- 引入轮播组件 -->
       <Carousel />
@@ -34,22 +34,9 @@
         <van-button
           text="立即登录"
           block
-          @click="showMask1=true"
+          @click="userLogin"
         />
-        <van-overlay
-          :show="showMask1"
-          @click="showMask1 = false"
-        >
-          <div
-            class="wrapper"
-            @click.stop
-          >
 
-            <div class="block">
-              <Login />
-            </div>
-          </div>
-        </van-overlay>
         <!-- 遮罩层 -->
         <van-button
           text="立即注册"
@@ -72,6 +59,10 @@
           </div>
         </van-overlay>
       </div>
+
+    </div>
+
+    <div class="wrap">
       <van-row>
         <router-link
           to="/sheet"
@@ -93,21 +84,20 @@
         </router-link>
       </van-row>
     </div>
-
     <div class="cover">
       <keep-alive>
         <router-view></router-view>
       </keep-alive>
     </div>
-
   </div>
 </template>
 
 <script>
 import Carousel from "@/components/Carousel.vue";
 import sidebar from "@/components/Popup/Sidebar.vue";
-import Login from "@/components/Login/Login.vue";
+import LoginCpn from "@/components/Login/LoginCpn.vue";
 import Register from "@/components/Login/Register.vue";
+import Sheet from "@/components/Gedan/Sheet.vue";
 
 export default {
   name: "Navigation",
@@ -115,19 +105,23 @@ export default {
     return {
       active: 1,
       show: false,
-      showMask1: false,
+      // showMask1: false,
       showMask2: false
     };
   },
   components: {
     Carousel,
     sidebar,
-    Login,
-    Register
+    LoginCpn,
+    Register,
+    Sheet
   },
   created() {},
   mounted() {},
   methods: {
+    userLogin() {
+      this.$router.push("/login");
+    },
     showPopup() {
       this.show = true;
     }
@@ -161,7 +155,6 @@ export default {
   width: 100%;
   background: rgb(204, 105, 163);
   font-size: 0.8rem;
-  height: 2rem;
 }
 .van-row {
   width: 100%;
@@ -169,6 +162,8 @@ export default {
   justify-content: space-around;
   background: rgb(139, 0, 0);
   color: #e47813;
+  height: 50px;
+  line-height: 50px;
 }
 .van-row .van-col {
   font-size: 20px;
@@ -179,13 +174,16 @@ export default {
 }
 
 .cover {
-  height: 100vh;
   width: 100%;
-  margin-top: 3rem;
+  background: green;
+}
+// 歌单列表展示
+.van-row-content {
+  background: yellow;
 }
 // 侧边栏
 .navigation-popup {
-  background: green;
+  padding: 20px 20px;
 }
 // 遮罩层
 /*遮罩层 */
