@@ -1,29 +1,31 @@
 <template>
   <div id="navigation">
-    <div class="flex">
-      <div class="icon">
-        <van-cell @click="showPopup">
-          <van-icon name="wap-nav" />
-        </van-cell>
-        <!-- 侧边栏 -->
-        <van-popup
-          v-model="show"
-          round
-          position="left"
-          :style="{ width: '60%',height:'100%'}"
-          class="navigation-popup"
-        >
-          <!-- 引入侧边栏组件 -->
-          <sidebar />
-        </van-popup>
+    <van-sticky>
+      <div class="flex">
+        <div class="icon">
+          <van-cell @click="showPopup">
+            <van-icon name="wap-nav" />
+          </van-cell>
+          <!-- 侧边栏 -->
+          <van-popup
+            v-model="show"
+            round
+            position="left"
+            :style="{ width: '60%',height:'100%'}"
+            class="navigation-popup"
+          >
+            <!-- 引入侧边栏组件 -->
+            <sidebar />
+          </van-popup>
+        </div>
+        <div class="title">VUE-MUSIC</div>
+        <div class="icon">
+          <router-link to="/search">
+            <van-icon name="search" />
+          </router-link>
+        </div>
       </div>
-      <div class="title">VUE-MUSIC</div>
-      <div class="icon">
-        <router-link to="/search">
-          <van-icon name="search" />
-        </router-link>
-      </div>
-    </div>
+    </van-sticky>
     <div class="wrap2">
 
       <!-- 引入轮播组件 -->
@@ -61,29 +63,31 @@
       </div>
 
     </div>
+    <van-sticky>
 
-    <div class="wrap">
-      <van-row>
-        <router-link
-          to="/sheet"
-          tag="div"
-        >
-          <van-col>推荐</van-col>
-        </router-link>
-        <router-link
-          to="/ranking"
-          tag="div"
-        >
-          <van-col>排行榜</van-col>
-        </router-link>
-        <router-link
-          to="/singer"
-          tag="div"
-        >
-          <van-col>歌手</van-col>
-        </router-link>
-      </van-row>
-    </div>
+      <div class="wrap">
+        <van-row>
+          <router-link
+            to="/sheet"
+            tag="div"
+          >
+            <van-col>推荐</van-col>
+          </router-link>
+          <router-link
+            to="/ranking"
+            tag="div"
+          >
+            <van-col>排行榜</van-col>
+          </router-link>
+          <router-link
+            to="/singer"
+            tag="div"
+          >
+            <van-col>歌手</van-col>
+          </router-link>
+        </van-row>
+      </div>
+    </van-sticky>
     <div class="cover">
       <keep-alive>
         <router-view></router-view>
@@ -116,8 +120,7 @@ export default {
     Register,
     Sheet
   },
-  created() {},
-  mounted() {},
+
   methods: {
     userLogin() {
       this.$router.push("/login");

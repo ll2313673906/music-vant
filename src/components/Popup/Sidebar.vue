@@ -116,10 +116,6 @@ export default {
         this.$refs.img.src =
           "https://i.loli.net/2020/05/12/dVMKqUEn5wfusX4.jpg";
         this.$refs.name.innerHTML = "当前无账号，请登录！";
-        this.$notify({
-          type: "danger",
-          message: "当前没有账号，请登录账号"
-        });
       } else {
         if (this.$store.state.uid == "") {
           this.$store.state.uid = JSON.parse(sessionStorage.getItem("uid"));

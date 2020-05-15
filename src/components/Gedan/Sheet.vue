@@ -43,12 +43,6 @@ export default {
         this.sheetarray = res.data.playlists;
       });
     },
-    // 轮播图
-    getpic() {
-      this.axios.get("/banner?type=1").then(res => {
-        this.pic = res.data.banners;
-      });
-    },
     nohave() {
       this.$dialog.alert({
         message:
@@ -58,7 +52,6 @@ export default {
   },
   mounted() {
     this.getsheet();
-    this.getpic();
   }
 };
 </script>

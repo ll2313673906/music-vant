@@ -20,16 +20,26 @@ const routes = [
     name: 'Home',
     component: () => import(/* webpackChunkName: "about" */ '../views/Home.vue'),
     redirect: '/sheet',
+    // 避免用户在第一次使用时,没有songid而报错
+    beforeEnter: (to, from, next) => {
+      if (!sessionStorage.getItem('songid')) {
+        let songid = []
+        songid = JSON.stringify(songid)
+        sessionStorage.setItem('songid', songid)
+      }
+      next()
+    },
     children: [
       // 歌单
       { path: '/sheet', component: () => import('../components/Gedan/Sheet.vue') },
-
       // 排行榜
       { path: '/ranking', component: () => import('../components/Ranking/Ranking.vue') },
       //歌手
       { path: '/singer', component: () => import('../components/Singer/Singer.vue') },
     ],
   },
+  // 歌单详情
+  { path: '/sheet/:id', component: () => import('../components/Gedan/sheetdetails.vue') },
   {
     // 登录
     path: '/login',
@@ -49,6 +59,29 @@ const routes = [
     path: '/music',
     name: 'Music',
     component: () => import(/* webpackChunkName: "about" */ '../views/Music.vue'),
+  },
+  // 公共组件
+  {
+    path: '/detail',
+    component: () => import('../components/Common/Detail.vue'),
+  },
+  {
+    path: '/songdetail/:id',
+    component: () => import('../components/Common/Songdetail.vue'),
+    beforeEnter: (to, from, next) => {
+      store.state.showfooter = false
+      next()
+    },
+  },
+  {
+    path: '/footer',
+    name: 'Footer',
+    component: () => import('../views/Footer.vue'),
+  },
+
+  {
+    path: '/playhistory',
+    component: () => import('../components/Popup/Playhistory.vue'),
   },
 ]
 

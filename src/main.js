@@ -55,6 +55,14 @@ import { Grid, GridItem } from 'vant'
 Vue.use(Grid)
 Vue.use(GridItem)
 
+// Sticky粘性布局
+import { Sticky } from 'vant'
+Vue.use(Sticky)
+
+// 加载
+import { loading } from 'vant'
+Vue.use(loading)
+
 // 引入网易云api
 // axios
 import axios from 'axios'
