@@ -1,6 +1,7 @@
 <template>
   <div id="hotsong">
     <h3>推荐歌曲</h3>
+
     <transition-group
       enter-active-class="animated rotateInUpLeft"
       leave-active-class="animated rotateInDownRight"
@@ -29,6 +30,7 @@
         </div>
       </div>
     </transition-group>
+
   </div>
 </template>
 
