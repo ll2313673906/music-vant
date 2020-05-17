@@ -1,6 +1,6 @@
 <template>
   <div id="user">
-<!--     引入头部导航栏 -->
+    <!--     引入头部导航栏 -->
     <NavHeader
       :title="message"
       :search="search"
@@ -21,6 +21,7 @@
           <p>{{ item.name }}</p>
           <p>播放:{{ item.playCount | count }}次</p>
           <p>创建者:{{ item.creator.nickname }}</p>
+          <p>创建者:{{ item.creator.city }}</p>
         </div>
       </div>
     </div>

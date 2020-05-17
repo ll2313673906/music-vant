@@ -178,7 +178,6 @@ export default {
 
 .cover {
   width: 100%;
-  background: green;
 }
 // 歌单列表展示
 .van-row-content {

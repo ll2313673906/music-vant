@@ -14,19 +14,22 @@
       class="show"
       v-show="isshow"
     >
-      <van-nav-bar
-        left-arrow
-        :left-text="title"
-        @click-left="onClickLeft"
-      />
-      <!-- 图片描述 -->
-      <div class="gedan">
-        <img
-          v-lazy="details.coverImgUrl"
-          alt
-        />
-      </div>
 
+      <van-sticky>
+        <van-nav-bar
+          left-arrow
+          :left-text="title"
+          @click-left="onClickLeft"
+        />
+
+        <!-- 图片描述 -->
+        <div class="gedan">
+          <img
+            v-lazy="details.coverImgUrl"
+            alt
+          />
+        </div>
+      </van-sticky>
       <div class="description">{{details.name}}</div>
       <div class="playcount">
         <van-icon name="service-o" />
@@ -42,6 +45,7 @@
             <div class="play">
               <span>播放全部</span>
               <span>(共{{details.trackCount}}首)</span>
+
             </div>
           </van-col>
           <van-col span="6"></van-col>
@@ -55,7 +59,12 @@
             v-for="(item,index) in song"
             :key="index"
           >
-            <div class="id">{{index+1}}</div>
+            <div class="id">
+              <img
+                src="https://i.loli.net/2020/05/16/9OqL3oZQkE1Gntp.png"
+                width="20px"
+              >
+            </div>
 
             <div
               class="dansong"
@@ -87,8 +96,7 @@ export default {
       details: [],
       song: [],
       isshow: false,
-      isloading: true,
-      index: -1
+      isloading: true
     };
   },
   props: ["title"],
@@ -150,7 +158,7 @@ export default {
   bottom: 0;
   font-size: 2rem;
   text-align: center;
-  color: red;
+  color: rgb(55, 0, 255);
 }
 .jiazai {
   font-size: 1.4rem;
@@ -176,6 +184,7 @@ span {
   align-items: center;
   text-align: center;
   margin-top: -47px;
+  background: red;
 }
 .gedan img {
   width: 100%;
@@ -238,10 +247,10 @@ span {
   height: 3rem;
   margin-top: 2rem;
   border-radius: 5px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid rgb(240, 87, 40);
 }
 .list:hover {
-  background: linear-gradient(45deg, #f40, skyblue);
+  background: linear-gradient(45deg, #f40, rgb(236, 32, 49));
 }
 .van-icon {
   color: #000;
@@ -249,7 +258,7 @@ span {
 }
 .id {
   flex: 1;
-  font-size: 0.6rem;
+  font-size: 1.2rem;
   color: #000;
   margin-left: 1rem;
 }
@@ -261,21 +270,27 @@ span {
   flex: 6;
 }
 .dansong .name {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #000;
 }
 .songer {
-  color: #555;
+  color: rgb(94, 87, 87);
   opacity: 0.8;
+  font-size: 1rem;
   margin-top: 0.4rem;
 }
 .ellipsis {
   margin-left: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .meun {
   width: 3rem;
   height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
 }
 </style>

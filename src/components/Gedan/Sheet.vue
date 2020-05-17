@@ -108,4 +108,8 @@ export default {
 .count img {
   border-radius: 1rem;
 }
+.van-grid-item {
+  background: rgb(139, 0, 0);
+  padding: 5px;
+}
 </style>

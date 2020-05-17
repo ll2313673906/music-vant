@@ -40,6 +40,10 @@ const routes = [
   },
   // 歌单详情
   { path: '/sheet/:id', component: () => import('../components/Gedan/sheetdetails.vue') },
+  // 排行榜详情
+  { path: '/ranking/:id', component: () => import('../components/Ranking/Rankdetail.vue') },
+  // 歌手详情
+  { path: '/singer/:id', component: () => import('../components/Singer/Singerdetail.vue') },
   {
     // 登录
     path: '/login',

@@ -2,7 +2,7 @@
   <div id="appfooter">
     <div class="wrap">
       <div class="image">
-        <router-link :to="'/songdetail/'+detail.id">
+        <router-link :to="'/songdetail/'+ detail.id">
           <img
             v-lazy="imgurl.picUrl"
             ref="img"
@@ -36,6 +36,7 @@
         </van-popup>
       </div>
     </div>
+    <router-view />
   </div>
 </template>
 
@@ -69,9 +70,9 @@ export default {
         //检测播放是否已暂停.
         if (audio.paused) {
           if (JSON.parse(sessionStorage.getItem("songid")).length !== 0) {
-            let playpromise = audio.play();
-            if (playPromise) {
-              playPromise
+            let playp = audio.play();
+            if (playP) {
+              playP
                 .then(() => {
                   setTimeout(() => {
                     e.target.innerHTML = "&#xe68e;";
@@ -144,7 +145,7 @@ export default {
   position: fixed;
   bottom: 0;
   z-index: 1000;
-  background: rgb(210, 69, 55);
+  background: rgb(139, 0, 0);
 }
 .wrap {
   width: 100%;
@@ -185,5 +186,6 @@ i {
 /* 开始播放icon */
 .palyicon {
   font-size: 2rem;
+  background: red;
 }
 </style>

@@ -50,6 +50,9 @@ export default {
   flex-wrap: wrap;
   justify-content: space-around;
   .van-grid-item {
+    background: rgb(139, 0, 0);
+    padding: 5px 5px;
+
     .img {
       width: 100%;
       height: 100%;

@@ -88,9 +88,9 @@ export default {
           audio.src = this.$store.state.src;
           if (audio !== null) {
             if (audio.paused) {
-              let playpromise = audio.play();
-              if (playpromise) {
-                playpromise
+              let playp = audio.play();
+              if (playp) {
+                playp
                   .then(() => {
                     setTimeout(() => {
                       if (this.$store.state.showfooter === true) {

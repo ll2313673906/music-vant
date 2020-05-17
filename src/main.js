@@ -47,7 +47,7 @@ import { Lazyload } from 'vant'
 Vue.use(Lazyload, {
   lazyComponent: true,
   error: require('./assets/error.jpg'),
-  loading: require('./assets/loading.gif'),
+  loading: require('./assets/loading1.gif'),
 })
 
 // 宫格布局
@@ -62,6 +62,15 @@ Vue.use(Sticky)
 // 加载
 import { loading } from 'vant'
 Vue.use(loading)
+
+// 图片
+import { Image } from 'vant'
+Vue.use(Image)
+
+// Tab
+import { Tab, Tabs } from 'vant'
+Vue.use(Tab)
+Vue.use(Tabs)
 
 // 引入网易云api
 // axios
