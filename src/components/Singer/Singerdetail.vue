@@ -29,6 +29,10 @@
           animated
           swipeable
         >
+          <van-tab title="首页">
+            <!-- 引入歌曲组件 -->
+            <Resolve />
+          </van-tab>
           <van-tab title="歌曲">
             <!-- 引入歌曲组件 -->
             <Hotsong :gid="gid" />
@@ -54,6 +58,7 @@
 </template>
 
 <script>
+import Resolve from "../Singer/Singerdetail/Resolve";
 import NavHeader from "@/components/Nav/NavHeader.vue";
 import Hotsong from "../Singer/Singerdetail/Hotsong";
 import Album from "../Singer/Singerdetail/Album";
@@ -75,7 +80,8 @@ export default {
     Hotsong,
     Album,
     Mv,
-    Personaldetail
+    Personaldetail,
+    Resolve
   },
 
   mounted() {

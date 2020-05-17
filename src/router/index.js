@@ -47,6 +47,7 @@ const routes = [
     path: '/singer/:id',
     component: () => import('../components/Singer/Singerdetail.vue'),
     children: [
+      { path: '/resolve', component: () => import('../components/Singer/Singerdetail/Resolve.vue') },
       { path: '/hotsong', component: () => import('../components/Singer/Singerdetail/Hotsong.vue') },
       { path: '/album', component: () => import('../components/Singer/Singerdetail/Album.vue') },
       { path: '/mv', component: () => import('../components/Singer/Singerdetail/Mv.vue') },
