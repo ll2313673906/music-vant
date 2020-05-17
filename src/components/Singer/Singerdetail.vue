@@ -29,15 +29,22 @@
           animated
           swipeable
         >
-          <van-tab title="主页">
-            <!-- 引入主页组件 -->
-            <Resolve />
+          <van-tab title="歌曲">
+            <!-- 引入歌曲组件 -->
+            <Hotsong :gid="gid" />
           </van-tab>
-          <van-tab title="歌曲"></van-tab>
-          <van-tab title="专辑"></van-tab>
-          <van-tab title="视频"></van-tab>
-          <van-tab title="主页"></van-tab>
-          <van-tab title="个人信息"></van-tab>
+          <van-tab title="专辑">
+            <!-- 引入专辑组件 -->
+            <Album :gid="gid" />
+          </van-tab>
+          <van-tab title="视频">
+            <!-- 引入视频组件 -->
+            <Mv :gid="gid" />
+          </van-tab>
+          <van-tab title="个人信息">
+            <!-- 引入个人信息 -->
+            <Personaldetail :gid="gid" />
+          </van-tab>
 
         </van-tabs>
       </div>
@@ -48,7 +55,10 @@
 
 <script>
 import NavHeader from "@/components/Nav/NavHeader.vue";
-import Resolve from "../Singer/Singerdetail/Resolve";
+import Hotsong from "../Singer/Singerdetail/Hotsong";
+import Album from "../Singer/Singerdetail/Album";
+import Mv from "../Singer/Singerdetail/Mv";
+import Personaldetail from "../Singer/Singerdetail/Personaldetail";
 
 export default {
   name: "Singerdetail",
@@ -56,12 +66,16 @@ export default {
     return {
       details: [],
       isloading: true,
-      isshow: false
+      isshow: false,
+      gid: ""
     };
   },
   components: {
     NavHeader,
-    Resolve
+    Hotsong,
+    Album,
+    Mv,
+    Personaldetail
   },
 
   mounted() {

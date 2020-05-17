@@ -43,7 +43,16 @@ const routes = [
   // 排行榜详情
   { path: '/ranking/:id', component: () => import('../components/Ranking/Rankdetail.vue') },
   // 歌手详情
-  { path: '/singer/:id', component: () => import('../components/Singer/Singerdetail.vue') },
+  {
+    path: '/singer/:id',
+    component: () => import('../components/Singer/Singerdetail.vue'),
+    children: [
+      { path: '/hotsong', component: () => import('../components/Singer/Singerdetail/Hotsong.vue') },
+      { path: '/album', component: () => import('../components/Singer/Singerdetail/Album.vue') },
+      { path: '/mv', component: () => import('../components/Singer/Singerdetail/Mv.vue') },
+      { path: '/personaldetail', component: () => import('../components/Singer/Singerdetail/Personaldetail.vue') },
+    ],
+  },
   {
     // 登录
     path: '/login',
